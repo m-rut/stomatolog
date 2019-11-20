@@ -28,3 +28,13 @@ F:\Stomatolog\Stomatolog\Stomatolog\obj\Debug\Stomatolog.csproj.GenerateResource
 F:\Stomatolog\Stomatolog\Stomatolog\obj\Debug\Stomatolog.csproj.CoreCompileInputs.cache
 F:\Stomatolog\Stomatolog\Stomatolog\obj\Debug\Stomatolog.exe
 F:\Stomatolog\Stomatolog\Stomatolog\obj\Debug\Stomatolog.pdb
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\bin\Debug\Stomatolog.exe.config
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\bin\Debug\Stomatolog.exe
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\bin\Debug\Stomatolog.pdb
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.csprojAssemblyReference.cache
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.Form1.resources
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.Properties.Resources.resources
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.csproj.GenerateResource.cache
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.csproj.CoreCompileInputs.cache
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.exe
+C:\Users\Przemek\Desktop\Git\stomatolog\Stomatolog\obj\Debug\Stomatolog.pdb
