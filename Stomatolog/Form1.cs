@@ -170,7 +170,7 @@ namespace Stomatolog
                 LP[i] = Pop[i].Count;
             }
 
-    Queue<int> Q = new Queue<int>();
+            Queue<int> Q = new Queue<int>();
 
             for (int i = 1; i <= Lp; i++)
             {
@@ -191,7 +191,7 @@ namespace Stomatolog
             {
                 iter++;
                 int node = Q.Dequeue();
-C[node] = S[node] + (int) (Lst[node - 1].czasusl);
+                C[node] = S[node] + (int) (Lst[node - 1].czasusl);
                 foreach(var ns in Nast[node])
                 {
                     if (--LP[ns.nst] == 0)
@@ -219,26 +219,26 @@ C[node] = S[node] + (int) (Lst[node - 1].czasusl);
             for(int s=0; s<Lst.Count - 1; s++)
             {
                 int nst = Lst[s].nast + 1;
-    int w = (int)(Lst[s].przerwa);
+                int w = (int)(Lst[s].przerwa);
                 if (Lst[s].nast == 0)
                     continue;
                 cp ee = new cp(); ee.nst = nst; ee.w = w;
                 Nast[s + 1].Add(ee);
-    cp p = new cp(); p.nst = s+1; p.w = w;
+                cp p = new cp(); p.nst = s+1; p.w = w;
                 Pop[nst].Add(p);
 
 }
             for (int s = 0; s<Lp+1; s++)
             {
                 int node = pi[s];
-int nst = pi[s + 1];
+                int nst = pi[s + 1];
                 if (node == 0) continue;
                 if (nst == 0) continue;
                 int w = 0;
 
-cp ee = new cp(); ee.nst = nst; ee.w = w;
+                cp ee = new cp(); ee.nst = nst; ee.w = w;
                 Nast[node].Add(ee);
-cp p = new cp(); p.nst =node; p.w = w;
+                cp p = new cp(); p.nst =node; p.w = w;
                 Pop[nst].Add(p);
 
             }
@@ -310,7 +310,7 @@ cp p = new cp(); p.nst =node; p.w = w;
             int Cmax0=cmax(Lp, C);
             int bps = 0;
             int bCmax = 1000000;
-            for( int ps =1; ps<Lp-1;ps++)
+            for ( int ps =1; ps<Lp-1;ps++)
             {
                 int sw = pi[ps]; pi[ps] = pi[ps + 1];  pi[ps + 1] = sw;
                 createGraph(Lp, Lst, pi, out Nast, out Pop);
@@ -322,6 +322,7 @@ cp p = new cp(); p.nst =node; p.w = w;
                     {
                         bCmax = Cmax;
                         bps = ps;
+                        
                     }
                 }
 
@@ -332,13 +333,18 @@ cp p = new cp(); p.nst =node; p.w = w;
                int sw = pi[bps]; pi[bps] = pi[bps + 1]; pi[bps + 1] = sw;
                 goto et;
             }
-
-    
+            createGraph(Lp, Lst, pi, out Nast, out Pop);
+            harm(Lp, Lst, Pop, Nast, C, S);
         }
 
         private void Klienci_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Harmonogram_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

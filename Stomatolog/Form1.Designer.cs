@@ -40,12 +40,16 @@
             this.GWuslugi = new System.Windows.Forms.DataGridView();
             this.klienci = new System.Windows.Forms.TabPage();
             this.GWklienci = new System.Windows.Forms.DataGridView();
+            this.Harmonogram = new System.Windows.Forms.TabPage();
+            this.GWHarmonogram = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GWuslugi)).BeginInit();
             this.klienci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GWklienci)).BeginInit();
+            this.Harmonogram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GWHarmonogram)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -111,6 +115,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.klienci);
+            this.tabControl1.Controls.Add(this.Harmonogram);
             this.tabControl1.Location = new System.Drawing.Point(12, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -134,7 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GWuslugi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GWuslugi.Location = new System.Drawing.Point(112, -10);
+            this.GWuslugi.Location = new System.Drawing.Point(0, 0);
             this.GWuslugi.Name = "GWuslugi";
             this.GWuslugi.Size = new System.Drawing.Size(696, 211);
             this.GWuslugi.TabIndex = 0;
@@ -164,6 +169,26 @@
             this.GWklienci.TabIndex = 0;
             this.GWklienci.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // Harmonogram
+            // 
+            this.Harmonogram.Controls.Add(this.GWHarmonogram);
+            this.Harmonogram.Location = new System.Drawing.Point(4, 22);
+            this.Harmonogram.Name = "Harmonogram";
+            this.Harmonogram.Padding = new System.Windows.Forms.Padding(3);
+            this.Harmonogram.Size = new System.Drawing.Size(708, 223);
+            this.Harmonogram.TabIndex = 2;
+            this.Harmonogram.Text = "Harmonogram";
+            this.Harmonogram.UseVisualStyleBackColor = true;
+            this.Harmonogram.Click += new System.EventHandler(this.Harmonogram_Click);
+            // 
+            // GWHarmonogram
+            // 
+            this.GWHarmonogram.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GWHarmonogram.Location = new System.Drawing.Point(6, 0);
+            this.GWHarmonogram.Name = "GWHarmonogram";
+            this.GWHarmonogram.Size = new System.Drawing.Size(702, 223);
+            this.GWHarmonogram.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +206,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GWuslugi)).EndInit();
             this.klienci.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GWklienci)).EndInit();
+            this.Harmonogram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GWHarmonogram)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +227,8 @@
         private System.Windows.Forms.DataGridView GWklienci;
         private System.Windows.Forms.ToolStripMenuItem klienciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obliczToolStripMenuItem;
+        private System.Windows.Forms.TabPage Harmonogram;
+        private System.Windows.Forms.DataGridView GWHarmonogram;
     }
 }
 
