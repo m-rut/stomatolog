@@ -1,0 +1,13 @@
+Lp;Usluga;Cena;czy etapowe;ilosc etapow;minOdstep;czas trwania
+1;Fluoryzacja;80;Nie;1;0;45
+2;Lakowanie zebow;50;Nie;1;0;45
+3;Leczenie kanalowe I etap;60;Tak;3;10;30
+3;Leczenie kanalowe II etap;80;Tak;;14;90
+3;Leczenie kanalowe III etap;120;Tak;;0;45
+4;Odbudowa zeba;200;Tak;2;30;30
+4;Odbudowa zeba II;;;;0;60
+5;Opatrunek leczniczy;30;Tak;2;7;35
+5;Opatrunek leczniczy II;40;;;0;50
+6;Piaskowanie zebow;50;Nie;1;0;60
+7;Przeglad stomatologiczny;50;Nie;1;0;25
+8;Chirurgiczne usuwanie zeba;300;Nie;1;0;120

@@ -40,12 +40,16 @@
             this.GWuslugi = new System.Windows.Forms.DataGridView();
             this.klienci = new System.Windows.Forms.TabPage();
             this.GWklienci = new System.Windows.Forms.DataGridView();
+            this.Harmonogram = new System.Windows.Forms.TabPage();
+            this.GWHarmonogram = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GWuslugi)).BeginInit();
             this.klienci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GWklienci)).BeginInit();
+            this.Harmonogram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GWHarmonogram)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -55,7 +59,7 @@
             this.obliczToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(740, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(894, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,26 +78,26 @@
             // otwórzToolStripMenuItem
             // 
             this.otwórzToolStripMenuItem.Name = "otwórzToolStripMenuItem";
-            this.otwórzToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otwórzToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.otwórzToolStripMenuItem.Text = "otwórz";
             this.otwórzToolStripMenuItem.Click += new System.EventHandler(this.otwórzToolStripMenuItem_Click);
             // 
             // klienciToolStripMenuItem
             // 
             this.klienciToolStripMenuItem.Name = "klienciToolStripMenuItem";
-            this.klienciToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.klienciToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.klienciToolStripMenuItem.Text = "klienci";
             this.klienciToolStripMenuItem.Click += new System.EventHandler(this.klienciToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(113, 6);
             // 
             // zakończToolStripMenuItem
             // 
             this.zakończToolStripMenuItem.Name = "zakończToolStripMenuItem";
-            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zakończToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.zakończToolStripMenuItem.Text = "zakończ";
             this.zakończToolStripMenuItem.Click += new System.EventHandler(this.zakończToolStripMenuItem_Click);
             // 
@@ -111,10 +115,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.klienci);
+            this.tabControl1.Controls.Add(this.Harmonogram);
             this.tabControl1.Location = new System.Drawing.Point(12, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(716, 249);
+            this.tabControl1.Size = new System.Drawing.Size(870, 431);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -123,7 +128,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(708, 223);
+            this.tabPage1.Size = new System.Drawing.Size(943, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Usługi";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -134,9 +139,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GWuslugi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GWuslugi.Location = new System.Drawing.Point(112, -10);
+            this.GWuslugi.Location = new System.Drawing.Point(0, 0);
             this.GWuslugi.Name = "GWuslugi";
-            this.GWuslugi.Size = new System.Drawing.Size(696, 211);
+            this.GWuslugi.Size = new System.Drawing.Size(931, 468);
             this.GWuslugi.TabIndex = 0;
             this.GWuslugi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GWuslugi_CellContentClick);
             // 
@@ -146,7 +151,7 @@
             this.klienci.Location = new System.Drawing.Point(4, 22);
             this.klienci.Name = "klienci";
             this.klienci.Padding = new System.Windows.Forms.Padding(3);
-            this.klienci.Size = new System.Drawing.Size(708, 223);
+            this.klienci.Size = new System.Drawing.Size(896, 389);
             this.klienci.TabIndex = 1;
             this.klienci.Text = "Klienci";
             this.klienci.UseVisualStyleBackColor = true;
@@ -160,20 +165,45 @@
             this.GWklienci.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GWklienci.Location = new System.Drawing.Point(6, 6);
             this.GWklienci.Name = "GWklienci";
-            this.GWklienci.Size = new System.Drawing.Size(699, 214);
+            this.GWklienci.Size = new System.Drawing.Size(887, 380);
             this.GWklienci.TabIndex = 0;
             this.GWklienci.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Harmonogram
+            // 
+            this.Harmonogram.Controls.Add(this.GWHarmonogram);
+            this.Harmonogram.Location = new System.Drawing.Point(4, 22);
+            this.Harmonogram.Name = "Harmonogram";
+            this.Harmonogram.Padding = new System.Windows.Forms.Padding(3);
+            this.Harmonogram.Size = new System.Drawing.Size(862, 405);
+            this.Harmonogram.TabIndex = 2;
+            this.Harmonogram.Text = "Harmonogram";
+            this.Harmonogram.UseVisualStyleBackColor = true;
+            this.Harmonogram.Click += new System.EventHandler(this.Harmonogram_Click);
+            // 
+            // GWHarmonogram
+            // 
+            this.GWHarmonogram.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GWHarmonogram.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GWHarmonogram.Location = new System.Drawing.Point(6, 3);
+            this.GWHarmonogram.Name = "GWHarmonogram";
+            this.GWHarmonogram.Size = new System.Drawing.Size(853, 396);
+            this.GWHarmonogram.TabIndex = 0;
+            this.GWHarmonogram.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GWHarmonogram_CellContentClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 317);
+            this.ClientSize = new System.Drawing.Size(894, 479);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -181,6 +211,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.GWuslugi)).EndInit();
             this.klienci.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GWklienci)).EndInit();
+            this.Harmonogram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GWHarmonogram)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +232,8 @@
         private System.Windows.Forms.DataGridView GWklienci;
         private System.Windows.Forms.ToolStripMenuItem klienciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obliczToolStripMenuItem;
+        private System.Windows.Forms.TabPage Harmonogram;
+        private System.Windows.Forms.DataGridView GWHarmonogram;
     }
 }
 
