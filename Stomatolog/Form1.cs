@@ -35,8 +35,6 @@ namespace Stomatolog
 
             {
 
-               
-
                 return null;
 
             }
@@ -101,7 +99,33 @@ namespace Stomatolog
 
         }
 
+        public void genHarm(int[] pi, List<CDesc> Lst, int[] C)
 
+        {
+            DataTable harmTable = new DataTable("Harmonogram");
+            harmTable.Columns.Add("Lp.", typeof(string));
+            harmTable.Columns.Add("Nazwisko", typeof(string));
+            harmTable.Columns.Add("Usluga", typeof(string));
+            harmTable.Columns.Add("Czas zakończenia", typeof(string));
+            harmTable.Columns.Add("Dzień i godzina", typeof(string));
+            double[] Dzien = new double[C.Length];
+            double[] Godzina = new double[C.Length];
+            for (int i=1; i < pi.Length-1; i++)
+            {
+                Dzien[pi[i]] = Math.Ceiling((double)C[pi[i]] / (60 * 8));
+                Godzina[pi[i]] = ((double)C[pi[i]] / (60 * 8)+1 - Dzien[pi[i]]) * 8;
+                DataRow DR = harmTable.NewRow();
+                DR["Lp."] = i;
+                DR["Nazwisko"] = Lst[pi[i]-1].nazwisko;
+                DR["Usluga"] = Lst[pi[i] - 1].usluga;
+                DR["Czas zakończenia"] = C[pi[i]];
+                DR["Dzień i godzina"] = "Dzień: "+ Dzien[pi[i]] +" Godzina: "+ String.Format("{0:0.00}", Godzina[pi[i]]);
+                harmTable.Rows.Add(DR);
+            }
+
+            harmTable.Select();
+            GWHarmonogram.DataSource = harmTable;
+        }
 
 
         private void plikToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,6 +179,8 @@ namespace Stomatolog
             public double czasusl = 0;
             public double przerwa = 0;
             public int nast = 0;
+            public string nazwisko;
+            public string usluga;
         }
         public class cp
         {
@@ -261,7 +287,7 @@ namespace Stomatolog
             var DR = DTklienci.Select();
             int Lp = 0;
             List<CDesc> Lst = new List<CDesc>();
-
+            
     
         
             foreach(var row in DR)
@@ -276,6 +302,8 @@ namespace Stomatolog
                     CDesc el1 = new CDesc();
                     el1.czasusl = double.Parse(rec1["czas trwania"].ToString());
                     el1.przerwa = double.Parse(rec1["minOdstep"].ToString()) * 8 * 60;
+                    el1.nazwisko = row["Dane Klienta"].ToString();
+                    el1.usluga = rec1["Usluga"].ToString();
                     el1.nast = Lp+1;
                     Lst.Add(el1);
                     Lp++;
@@ -285,6 +313,8 @@ namespace Stomatolog
                 CDesc el = new CDesc();
                 el.czasusl = double.Parse(rec["czas trwania"].ToString());
                 el.przerwa = double.Parse(rec["minOdstep"].ToString())*8*60;
+                el.nazwisko = row["Dane Klienta"].ToString();
+                el.usluga = rec["Usluga"].ToString();
                 el.nast = 0;
                 Lst.Add(el);
                 Lp++;
@@ -333,8 +363,10 @@ namespace Stomatolog
                int sw = pi[bps]; pi[bps] = pi[bps + 1]; pi[bps + 1] = sw;
                 goto et;
             }
+            //----------dotąd na zajęciach
             createGraph(Lp, Lst, pi, out Nast, out Pop);
             harm(Lp, Lst, Pop, Nast, C, S);
+            genHarm(pi, Lst, C);
         }
 
         private void Klienci_Click(object sender, EventArgs e)
@@ -345,6 +377,16 @@ namespace Stomatolog
         private void Harmonogram_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GWHarmonogram_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
